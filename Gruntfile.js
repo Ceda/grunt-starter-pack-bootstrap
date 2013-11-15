@@ -21,7 +21,7 @@ module.exports = function(grunt) {
         '_sources/bootstrap-src/bootstrap-transition.js' ,
         '_sources/bootstrap-src/bootstrap-typeahead.js'
         ],
-        dest: 'assets/js/bootstrap.js'
+        dest: '../assets/js/bootstrap.js'
       }
     },
 
@@ -31,75 +31,75 @@ module.exports = function(grunt) {
       },
       bootstrap: {
         src: ['_sources/bootstrap-less/bootstrap.less'],
-        dest: 'assets/css/bootstrap.css'
+        dest: '../assets/css/bootstrap.css'
       },
       min: {
         options: {
           compress: true
         },
         src: ['_sources/bootstrap-less/bootstrap.less'],
-        dest: 'assets/css/bootstrap.min.css'
+        dest: '../assets/css/bootstrap.min.css'
       }
     },
     
     less: {
       development: {
         options: {
-          paths: ["assets/css"]
+          paths: ["../assets/css"]
         },
         files: {
-          "assets/css/style.css": "assets/less/style.less"
+          "../assets/css/style.css": "../assets/less/style.less"
         }
       },
       production: {
         options: {
-          paths: ["assets/css"],
+          paths: ["../assets/css"],
           cleancss: true
         },
         files: {
-          "assets/css/style.min.css": "assets/less/style.less"
+          "../assets/css/style.min.css": "../assets/less/style.less"
         }
       }
     },
     
     watch: {
       less: {
-        files: 'assets/less/*.less',
+        files: '../assets/less/*.less',
         tasks: ['less'],
         options: {
           livereload: true,
         },
       },
       img: {
-        files: 'img/*.*',
+        files: '../img/*.*',
         tasks: '',
         options: {
           livereload: true,
         },
       },
       js: {
-        files: 'assets/js/*.js',
+        files: '../assets/js/*.js',
         tasks: '',
         options: {
           livereload: true,
         },
       },
       src: {
-        files: 'assets/src/*.js',
+        files: '../assets/src/*.js',
         tasks: ['uglify:scripts'],
         options: {
           livereload: true,
         },
       },
       html: {
-        files: '*.html',
+        files: '../*.html',
         tasks: '',
         options: {
           livereload: true,
         },
       },
       css: {
-        files: 'assets/css/*.css',
+        files: '../assets/css/*.css',
         tasks: '',
         options: {
           livereload: true,
@@ -112,48 +112,48 @@ module.exports = function(grunt) {
         expand: true,
         src: ["*.html"],
         cwd: '_sources',
-        dest: '.'
+        dest: '../'
       },
       img: {
         expand: true,
         src: ["img/*.*"],
         cwd: '_sources',
-        dest: '.'
+        dest: '../'
       },
       less: {
         expand: true,
         src: ["less/*.*"],
         cwd: '_sources',
-        dest: 'assets/'
+        dest: '../assets/'
       },
       src: {
         expand: true,
         src: ["src/*.*"],
         cwd: '_sources',
-        dest: 'assets/'
+        dest: '../assets/'
       },
       js: {
         expand: true,
         src: ["*.js"],
         cwd: '_sources/js/',
-        dest: 'assets/js/'
+        dest: '../assets/js/'
       },
       css: {
         expand: true,
         cwd: '_sources/css/',
         src: ['*.css'],
-        dest: 'assets/css/'
+        dest: '../assets/css/'
       }
     },
     
     uglify: {
       bootstrap: {
         src: ['<%= concat.bootstrap.dest %>'],
-        dest: 'assets/js/bootstrap.min.js'
+        dest: '../assets/js/bootstrap.min.js'
       },
       scripts: {
-        src: ['assets/src/scripts.js'],
-        dest: 'assets/js/scripts.min.js'
+        src: ['../assets/src/scripts.js'],
+        dest: '../assets/js/scripts.min.js'
       },
       
     },
