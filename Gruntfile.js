@@ -71,7 +71,7 @@ module.exports = function(grunt) {
         },
       },
       img: {
-        files: '../img/*.*',
+        files: '../assets/img/*.*',
         tasks: '',
         options: {
           livereload: true,
@@ -118,7 +118,7 @@ module.exports = function(grunt) {
         expand: true,
         src: ["img/*.*"],
         cwd: '_sources',
-        dest: '../'
+        dest: '../assets/'
       },
       less: {
         expand: true,
